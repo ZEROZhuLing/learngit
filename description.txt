@@ -4,3 +4,7 @@ Microsoft的Word格式就是二进制格式，所以版本控制是没法跟踪W
 Git安装完之后要做最后一步设置，在bash下输入：
 $ git config --global user.name "Your Name"
 $ git config --global user.email "email@example.com"
+
+git status 命令能让我们时刻掌握仓库当前的状态，比如：某文件被修改了，但是还没有add和commit
+
+git diff 顾名思义就是查看difference，查看仓库哪些变动，比如某文件哪里做了改动（添加或是删除）
