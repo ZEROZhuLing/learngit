@@ -46,3 +46,5 @@ git reset命令既可以回退版本，也可以把暂存区的修改回退到�
 	第一步用命令git reset HEAD filename(加后缀)，就回到了场景一
 	第二步按场景一操作
 场景三：已经提交了不合适的修改到版本库，想要撤销本次操作，可使用git reset命令来实现版本回退
+
+git rm filename(加后缀) 和git commit -m "description"命令用来删除文件
