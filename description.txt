@@ -48,3 +48,15 @@ git reset命令既可以回退版本，也可以把暂存区的修改回退到�
 场景三：已经提交了不合适的修改到版本库，想要撤销本次操作，可使用git reset命令来实现版本回退
 
 git rm filename(加后缀) 和git commit -m "description"命令用来删除文件
+
+
+将本地Git仓库和GitHub上的远程仓库：
+1、首先登陆GitHub创建一个新的仓库
+2、在本地仓库下：
+	$ git remote add origin 远程仓库的地址
+		添加后，远程库的名字就是origin，也可以改成别的名字，但这是Git默认的叫法
+3、把本地库的所有内容推送到远程库上
+	$ git push -u origin master
+		把本地库的内容推送到远程库用git push命令，实际上把当前master分支推送到远程。
+		由于远程库是空的，第一次推送时master分支时加上了-u参数，Git不但会把本地库的master分支内容推送到远程库的master分支，还会把本地库的master分支与远程库的master分支关联起来。在以后的推送或者拉取时就可以简化命令，不用加-u
+4、从现在起，只要本地做了提交，就可以通过命令：$ git push origin master把本地的master分支的最新修改推送至GitHub
