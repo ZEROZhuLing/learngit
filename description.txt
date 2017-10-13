@@ -8,3 +8,5 @@ $ git config --global user.email "email@example.com"
 git status 命令能让我们时刻掌握仓库当前的状态，比如：某文件被修改了，但是还没有add和commit
 
 git diff 顾名思义就是查看difference，查看仓库哪些变动，比如某文件哪里做了改动（添加或是删除）
+
+如果git status 告诉你有文件被修改过，用git diff查看修改内容
