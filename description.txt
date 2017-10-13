@@ -18,5 +18,7 @@ git diff 顾名思义就是查看difference，查看仓库哪些变动，比如�
 定位到某版本，在知道commit id(版本号)的情况下可以这样：git reset --hard commit_id
 
 如果不知道版本号可以使用git reflog命令，该命令用来记录你做过的每一次命令
+要重返历史版本，用git reflog查看命令历史，以便确定要回到未来哪个版本
 
 git log命令显示从最近到最远的提交日志，git log --pretty=oneline可以简化提交日志的输出
+用git log查看提交历史，以便确定要回退到哪个版本
