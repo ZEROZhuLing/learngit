@@ -18,6 +18,7 @@ git diff 顾名思义就是查看difference，查看仓库哪些变动，比如�
 回退到某版本使用reset命令，比如回退到上一个版本 git reset --hard HEAD^
 
 在Git中使用HEAD表示当前版本，也就是最新提交的那个，上一个版本是HEAD^,上上个版本是HEAD^^,往上N个可以写成HEAD~N
+(纠正：在Git中使用HEAD表示当前分支)
 
 定位到某版本，在知道commit id(版本号)的情况下可以这样：git reset --hard commit_id
 
@@ -70,4 +71,18 @@ git rm filename(加后缀) 和git commit -m "description"命令用来删除文�
 3、之后便在该文件夹d下就多了一个子文件夹gitskills,可以使用一下两个命令查看gitskills
 	cd gitskills
 	ls
+
+分支管理：
+分支的作用：假如你准备开发一个新功能，但是需要两周才能完成，第一周你写了50%的代码，如果立刻提交，由于代码还没写完，不完整的代码会导致别人不能继续干活了，如果等代码全部写完再一次提交，就又会存在丢失每天进度的巨大风险。这就需要分支，你创建了一个属于自己的分支，别人看不到，还继续在原来的分支上工作，而你在自己的分支上干活，想提交就提交，直到开发完毕后，再一次性合并到原来的分支上，这样既安全又不影响别人工作。
+
+1、首先创建分支dev，然后切换到dev分支
+	$ git checkout -b dev
+	git checkout命令加上-b参数表示创建分支并切换，相当于以下两条命令：
+		$ git branch dev     //创建dev分支
+		$ git checkout dev   //切换到dev分支
+2、$ git branch 查看所有分支，当前分支前面会标有一个*号
+3、把dev分支的工作成果合并到master分支上，用以下命令：
+	$ git merge dev
+4、删除分支dev
+	$ git branch -d dev
 
