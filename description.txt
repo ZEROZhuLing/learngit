@@ -6,8 +6,8 @@ $ git config --global user.name "Your Name"
 $ git config --global user.email "email@example.com"
 
 把文件往Git版本库里添加的时候，分两步执行：
-git add filename(包括后缀名)           #把文件添加到暂存区
-git commit filename(包括后缀名)        #把暂存区的所有内容提交到当前分支
+git add filename(加后缀名)           #把文件添加到暂存区
+git commit filename(加后缀名)        #把暂存区的所有内容提交到当前分支
 
 git status 命令能让我们时刻掌握仓库当前的状态，比如：某文件被修改了，但是还没有add和commit
 
