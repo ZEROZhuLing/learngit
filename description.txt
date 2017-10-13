@@ -53,8 +53,8 @@ git rm filename(加后缀) 和git commit -m "description"命令用来删除文�
 将本地Git仓库关联GitHub上的远程仓库：
 1、首先登陆GitHub创建一个新的仓库
 2、在本地仓库下：
-	$ git remote add origin 远程仓库的地址
-	或者是类似：$ git remote add origin git@github.com:ZEROZhuLing/learngit.
+	$ git remote add origin https://github.com/ZEROZhuLing/learngit.git
+	或者是：$ git remote add origin git@github.com:ZEROZhuLing/learngit.git
 		其中，ZEROZhuLing是你自己的GitHub的名字，learngit是你远程仓库的名字
 		添加后，远程库的名字就是origin，也可以改成别的名字，但这是Git默认的叫法
 3、把本地库的所有内容推送到远程库上
