@@ -97,21 +97,32 @@ $ git log --graph --pretty=oneline --abbrev-commit 可用来查看分支合并�
 		//该命令用来查看分支历史
 
 Git中的标签：
-1、创建标签，首先切换到需要创建标签的分支上，然后敲命令，比如我们要在分支dev上创建一个标签：
+1、创建标签：首先切换到需要创建标签的分支上，然后敲命令，比如我们要在分支dev上创建一个标签：
 	$ git checkout dev
 	$ git tag v1.0          //创建了一个名为"v1.0"的标签
-	即：$ git tag tag_name     //记得要在需要添加标签的分支上使用这条语句，不然标签就打错位置了
+	即：$ git tag <tag_name>     //记得要在需要添加标签的分支上使用这条语句，不然标签就打错位置了
 2、查看所有标签：
 	$ git tag
 3、查看某标签信息：
-	$ git show tag_name
+	$ git show <tag_name>
+4、删除标签：创建的标签只存在本地，不会推送到远程仓库
+	$ git tag -d <tag_name>     //删除标签
+	$ git push origin <tag_name>    //推送某个标签到远程仓库
+	$ git push origin --tags      //一次性推送全部尚未推送到远程仓库的本地标签
+5、删除远程标签：如果标签已经推送到远程，要删除需要两步
+	$ git tag -d <tag_name>                   //先从本地删除
+	$ git push orign :refs/tags/<tag_name>     //从远程删除
+
+
 
 默认标签打在最新提交的commit上，有时候如果忘了打标签，比如现在周五，要给周一的打标签：
 1、找到历史提交的commit的id，可通过以下命令：
 	$ git log --pretty=oneline --abbrev-commit
 2、从上述命令的结果集中找到要添加标签的commit的id号，然后用命令
-	$ git tag commit_id tag_name
+	$ git tag commit_id <tag_name>
 
-$ git tag -a tag_name -m "......description........"     //指定标签信息
+$ git tag -a <tag_name> -m "......description........"     //指定标签信息
 
-$ git tag -s tag_name -m "......description........"     //可以用PGP签名标签
+$ git tag -s <tag_name> -m "......description........"     //可以用PGP签名标签(必须装有pgp)
+
+
